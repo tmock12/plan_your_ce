@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'authem', '1.0.0rc3'
 gem 'decent_exposure'
 gem 'haml-rails'
 gem 'jquery-rails'

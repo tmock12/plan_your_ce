@@ -30,6 +30,10 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.2)
     arel (3.0.2)
+    authem (1.0.0.rc3)
+      activesupport
+      bcrypt-ruby
+    bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capybara (2.0.2)
       mime-types (>= 1.16)
@@ -160,6 +164,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authem (= 1.0.0rc3)
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
