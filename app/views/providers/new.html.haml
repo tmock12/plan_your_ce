@@ -1,0 +1,41 @@
+= form_for provider do |f|
+  %dl
+
+    %dt= f.label :name
+    %dd= f.text_field :name
+
+    %dt= f.label :street_address_1, "Address"
+    %dd= f.text_field :street_address_1
+    %dd= f.text_field :street_address_2
+
+    %dt= f.label :city
+    %dd= f.text_field :city
+
+    %dt= f.label :state
+    %dd= f.select :state, US_State::NAMES
+
+    %dt= f.label :zip_code
+    %dd= f.text_field :zip_code
+
+    %dt= f.label :phone
+    %dd= f.phone_field :phone
+
+    %dt= f.label :fax
+    %dd= f.text_field :fax
+
+    %dt= f.label :website
+    %dd= f.text_field :website
+
+    %dt= f.label :email
+    %dd= f.text_field :email
+
+    %dt= f.label :cerp_number, "ADA Cerp Number"
+    %dd= f.text_field :cerp_number
+
+    %dt= f.label :password
+    %dd= f.password_field :password
+
+    %dt= f.label :password_confirmation
+    %dd= f.password_field :password_confirmation
+
+    = f.submit "Register"
