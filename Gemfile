@@ -4,6 +4,7 @@ gem 'authem', '1.0.0rc3'
 gem 'decent_exposure'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'phony_rails'
 gem 'rails', '3.2.11'
 gem 'sqlite3'
 
