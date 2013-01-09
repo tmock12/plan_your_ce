@@ -1,12 +1,19 @@
 Feature: Provider signs in
 
-  Scenario: as an unapproved provider
+  Background:
     Given I am on the home page
     And the following provider:
       | email    | ernst@example.com |
     When I follow "Sign in"
-    And I fill in the following:
+    Then I fill in the following:
       | email    | ernst@example.com |
-      | password | shipwreck         |
-    And I press "Sign in"
+      | password | shipwrecked       |
+
+  Scenario: as an unapproved provider
+    Given I press "Sign in"
     Then I should see "Your account is pending approval"
+
+  Scenario: as an approved provider
+    Given that provider has been approved
+    When I press "Sign in"
+    Then I should be on the courses page

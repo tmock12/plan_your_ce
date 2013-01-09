@@ -5,6 +5,13 @@ class SessionsController < ApplicationController
     if provider && !provider.activated?
       flash.now[:sign_in_error] = "Your account is pending approval"
       render :new
+    elsif provider && provider.authenticate(params[:password])
+      sign_in(provider, false)
+      redirect_to :courses
+    else
+      flash.now[:sign_in_error] = "Your email or password are incorrect"
+      render :new
     end
   end
+
 end

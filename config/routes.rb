@@ -7,4 +7,7 @@ PlanYourCe::Application.routes.draw do
 
   get '/sign_in', to: 'sessions#new'
   post '/sign_in', to: 'sessions#create'
+
+  resources :courses, only: [:index]
+
 end
