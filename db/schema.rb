@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109153456) do
+ActiveRecord::Schema.define(:version => 20130109195429) do
 
   create_table "providers", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130109153456) do
     t.datetime "updated_at",       :null => false
     t.string   "activation_token"
     t.datetime "activated_at"
+    t.string   "session_token"
   end
 
   add_index "providers", ["activation_token"], :name => "index_providers_on_activation_token"
