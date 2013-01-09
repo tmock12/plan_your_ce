@@ -14,4 +14,19 @@ describe Provider do
     it { should have(1).errors_on(:cerp_number) }
   end
 
+  describe 'activation fields' do
+    let(:provider) { Fabricate(:provider) }
+    subject { provider }
+
+    context 'non-activated provider' do
+      its(:activated?) { should be_false }
+      its(:activation_token) { should_not be_nil }
+    end
+
+    context 'activated provider' do
+      before { provider.activate! }
+      its(:activated?) { should be_true }
+    end
+  end
+
 end
