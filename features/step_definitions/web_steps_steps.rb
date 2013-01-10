@@ -24,6 +24,10 @@ When /^I select "(.*?)" from "(.*?)"$/ do |value, field|
   select(value, :from => field)
 end
 
+When /^I check "([^"]*)"$/ do |checkbox_label|
+  check(checkbox_label)
+end
+
 When /^I press "(.*?)"$/ do |button_name|
   click_button(button_name)
 end

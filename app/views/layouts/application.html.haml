@@ -8,6 +8,11 @@
   = csrf_meta_tags
   %body
     %header
+      -if current_user
+        =link_to "Add new class", new_provider_course_path(current_user)
+      -else
+        = link_to "Register", :new_provider
+        = link_to "Sign in", :sign_in
       - flash.keys.each do |type|
         .flash{ class: type }
           %p= flash[type]
