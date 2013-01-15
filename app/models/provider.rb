@@ -1,7 +1,7 @@
 class Provider < ActiveRecord::Base
   include Authem::User
 
-  has_many :courses
+  has_many :courses, dependent: :destroy
   has_one :provider_address
   alias :address :provider_address
 

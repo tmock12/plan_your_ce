@@ -30,4 +30,15 @@ describe Course do
       its(:phone) { should == '17708675309' }
     end
   end
+
+  describe "dependencies" do
+    let(:provider) { Fabricate(:provider) }
+    before { Fabricate(:course, provider: provider) }
+
+    it "requires a provider" do
+      Course.count.should == 1
+      Provider.destroy_all
+      Course.count.should == 0
+    end
+  end
 end
