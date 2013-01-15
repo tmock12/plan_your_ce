@@ -6,3 +6,9 @@ Given /^I am signed in$/ do
   fill_in 'Password', with: 'shipwrecked'
   click_button 'Sign in'
 end
+
+Then /^I should be signed out$/ do
+  current_path.should == courses_path
+  page.should_not have_content "Sign out"
+  page.should have_content "Sign in"
+end

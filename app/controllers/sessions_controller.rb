@@ -14,4 +14,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    sign_out
+    redirect_to :courses, notice: "You are now signed out"
+  end
+
 end
