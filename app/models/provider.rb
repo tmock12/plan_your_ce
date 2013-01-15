@@ -2,7 +2,10 @@ class Provider < ActiveRecord::Base
   include Authem::User
 
   has_many :courses
+  has_one :provider_address
+  alias :address :provider_address
 
+  accepts_nested_attributes_for :provider_address
 
   attr_accessible :cerp_number, :email, :fax, :name, :phone, 
     :website, :provider_address_attributes

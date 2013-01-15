@@ -4,7 +4,11 @@
     %dt= f.label :name
     %dd= f.text_field :name
 
-    = render 'shared/address_form', f: f
+    = f.fields_for :provider_address do |a|
+      = render 'shared/address_form', f: a
+
+    %dt= f.label :phone
+    %dd= f.phone_field :phone
 
     %dt= f.label :fax
     %dd= f.text_field :fax
