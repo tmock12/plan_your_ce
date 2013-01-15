@@ -2,7 +2,7 @@ class Provider < ActiveRecord::Base
   include Authem::User
 
   has_many :courses, dependent: :destroy
-  has_one :provider_address
+  has_one :provider_address, dependent: :destroy
   alias :address :provider_address
 
   accepts_nested_attributes_for :provider_address

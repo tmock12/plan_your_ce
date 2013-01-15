@@ -10,4 +10,14 @@ describe ProviderAddress do
     it { should have(1).errors_on(:zip_code) }
   end
 
+  describe "depencies" do
+    let(:provider) { Fabricate(:provider) }
+    before { Fabricate(:provider_address, provider: provider) }
+
+    it "requires a provider" do
+      ProviderAddress.count.should == 1
+      Provider.destroy_all
+      ProviderAddress.count.should == 0
+    end
+  end
 end
