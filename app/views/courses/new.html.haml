@@ -7,7 +7,11 @@
     %dt= f.label :description
     %dd= f.text_area :description
 
-    = render 'shared/address_form', f: f
+    =f.fields_for :course_address do |a|
+      = render 'shared/address_form', f: a
+
+    %dt= f.label :phone
+    %dd= f.phone_field :phone
 
     %dt= f.label :email
     %dd= f.email_field :email
