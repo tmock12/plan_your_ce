@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
   belongs_to :provider
-  has_one :course_address
+  has_one :course_address, dependent: :destroy
   alias :address :course_address
 
   serialize :audience
