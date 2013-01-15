@@ -30,11 +30,6 @@ ActiveRecord::Schema.define(:version => 20130115144551) do
     t.text     "description"
     t.string   "price"
     t.string   "instructor"
-    t.string   "street_address_1"
-    t.string   "street_address_2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip_code"
     t.string   "phone"
     t.string   "email"
     t.string   "credits"
@@ -44,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20130115144551) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "provider_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "courses", ["category"], :name => "index_courses_on_category"
