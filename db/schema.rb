@@ -52,11 +52,6 @@ ActiveRecord::Schema.define(:version => 20130115144551) do
 
   create_table "providers", :force => true do |t|
     t.string   "name"
-    t.string   "street_address_1"
-    t.string   "street_address_2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip_code"
     t.string   "phone"
     t.string   "fax"
     t.string   "website"
