@@ -1,4 +1,4 @@
-Given /^I am signed in$/ do
+Given /^I am signed in as an activated provider$/ do
   @provider ||= Fabricate(:provider)
   @provider.activate!
   visit sign_in_path

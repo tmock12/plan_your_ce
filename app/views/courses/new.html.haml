@@ -1,4 +1,4 @@
-= form_for [current_user, course] do |f|
+= form_for [provider, course] do |f|
 
   - course.errors.full_messages.each do |msg|
     %span.errors= msg
@@ -19,7 +19,7 @@
     %dd= f.phone_field :phone, value: provider.phone
 
     %dt= f.label :email
-    %dd= f.email_field :email, value: provider.email
+    %dd= f.email_field :email, value: provider.user.email
 
     %dt= f.label :credits
     %dd= f.number_field :credits

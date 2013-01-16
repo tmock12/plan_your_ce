@@ -1,6 +1,6 @@
 Feature: Provider views dashboard
   Background:
-    Given I am signed in
+    Given I am signed in as an activated provider
 
   Scenario: with courses
     Given I have a course

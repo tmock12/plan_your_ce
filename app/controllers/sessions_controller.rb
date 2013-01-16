@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
-  expose(:provider) { Provider.find_by_email(params[:email]) }
+  expose(:user) { User.find_by_email(params[:email]) }
+  expose(:provider) { Provider.find_by_user_id(user) }
 
   def create
     if provider && !provider.activated?
       flash.now[:sign_in_error] = "Your account is pending approval"
       render :new
-    elsif provider && provider.authenticate(params[:password])
-      sign_in(provider, false)
+    elsif user && user.authenticate(params[:password])
+      sign_in(user, false)
       redirect_to :dashboard
     else
       flash.now[:sign_in_error] = "Your email or password are incorrect"

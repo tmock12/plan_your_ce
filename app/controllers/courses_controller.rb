@@ -1,12 +1,12 @@
 class CoursesController < ApplicationController
   before_filter :require_user, except: [:index, :show]
-  expose(:provider) { ProviderDecorator.decorate(current_user) }
+  expose(:provider) { ProviderDecorator.decorate(Provider.find_by_user_id(current_user)) }
   expose(:courses)
   expose(:course) do
     if params[:id].present?
       CourseDecorator.decorate(Course.find(params[:id]))
     else
-      current_user.courses.build(params[:course])
+      provider.courses.build(params[:course])
     end
   end
 

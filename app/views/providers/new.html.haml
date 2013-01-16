@@ -21,16 +21,10 @@
     %dt= f.label :website
     %dd= f.text_field :website
 
-    %dt= f.label :email
-    %dd= f.text_field :email
-
     %dt= f.label :cerp_number, "ADA Cerp Number"
     %dd= f.text_field :cerp_number
 
-    %dt= f.label :password
-    %dd= f.password_field :password
-
-    %dt= f.label :password_confirmation
-    %dd= f.password_field :password_confirmation
+    = f.fields_for :user do |user|
+      = render 'users/form', f: user
 
     = f.submit "Register"

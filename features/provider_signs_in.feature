@@ -2,11 +2,10 @@ Feature: Provider signs in
 
   Background:
     Given I am on the home page
-    And the following provider:
-      | email    | ernst@example.com |
+    And 1 provider
     When I follow "Sign in"
     Then I fill in the following:
-      | email    | ernst@example.com |
+      | email    | fritz@example.com |
       | password | shipwrecked       |
 
   Scenario: as an unapproved provider

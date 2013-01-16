@@ -1,7 +1,7 @@
 Feature: Provider creates a course
 
   Scenario:
-    Given I am signed in
+    Given I am signed in as an activated provider
     And I am on the dashboard page
     When I follow "Add new class"
     And I fill in the following:
@@ -45,7 +45,7 @@ Feature: Provider creates a course
       | May 22, 2014                                  |
 
   Scenario: Populated address fields
-    Given I am signed in
+    Given I am signed in as an activated provider
     And I am on the dashboard page
     When I follow "Add new class"
     Then I should see the following values:
