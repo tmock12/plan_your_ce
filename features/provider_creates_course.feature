@@ -26,6 +26,7 @@ Feature: Provider creates a course
     Then I should see "Build a treehouse"
 
     And I should see the following:
+      | Text                                          |
       | Build a treehouse                             |
       | Build a house in a tree and live on an island |
       | $5.00                                         |
@@ -42,3 +43,16 @@ Feature: Provider creates a course
       | Dentist, Dental Assistant                     |
       | May 20, 2014                                  |
       | May 22, 2014                                  |
+
+  Scenario: Populated address fields
+    Given I am signed in
+    And I am on the courses page
+    When I follow "Add new class"
+    Then I should see the following values:
+      | Field    | Value             |
+      | Address  | banana way        |
+      | City     | Key West          |
+      | State    | FL                |
+      | Zip Code | 32254             |
+      | Phone    | 770-867-5309      |
+      | Email    | fritz@example.com |

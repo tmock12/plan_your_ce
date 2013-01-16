@@ -11,3 +11,9 @@ Then /^I should see the following:$/ do |table|
     page.should have_content row.first
   end
 end
+
+Then /^I should see the following values:$/ do |table|
+  table.rows.each do |field, value|
+    page.find_field(field).value.should == value
+  end
+end

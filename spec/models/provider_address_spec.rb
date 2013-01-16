@@ -11,8 +11,7 @@ describe ProviderAddress do
   end
 
   describe "depencies" do
-    let(:provider) { Fabricate(:provider) }
-    before { Fabricate(:provider_address, provider: provider) }
+    before { Fabricate(:provider) }
 
     it "requires a provider" do
       ProviderAddress.count.should == 1

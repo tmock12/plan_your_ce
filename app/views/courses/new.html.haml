@@ -16,10 +16,10 @@
       = render 'shared/address_form', f: a
 
     %dt= f.label :phone
-    %dd= f.phone_field :phone
+    %dd= f.phone_field :phone, value: provider.phone
 
     %dt= f.label :email
-    %dd= f.email_field :email
+    %dd= f.email_field :email, value: provider.email
 
     %dt= f.label :credits
     %dd= f.number_field :credits

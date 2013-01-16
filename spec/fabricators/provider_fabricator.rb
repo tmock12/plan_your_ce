@@ -5,4 +5,5 @@ Fabricator(:provider) do
   password_confirmation 'shipwrecked'
   phone '770-867-5309'
   cerp_number '12345'
+  provider_address
 end

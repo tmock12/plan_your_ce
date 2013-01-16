@@ -1,12 +1,12 @@
 %dt= f.label :street_1, "Address"
-%dd= f.text_field :street_1
-%dd= f.text_field :street_2
+%dd= f.text_field :street_1, value: provider.address.street_1
+%dd= f.text_field :street_2, value: provider.address.street_2
 
 %dt= f.label :city
-%dd= f.text_field :city
+%dd= f.text_field :city, value: provider.address.city
 
 %dt= f.label :state
-%dd= f.select :state, US_State::NAMES
+%dd= f.select :state, US_State::NAMES, selected: provider.address.state
 
 %dt= f.label :zip_code
-%dd= f.text_field :zip_code
+%dd= f.text_field :zip_code, value: provider.address.zip_code
