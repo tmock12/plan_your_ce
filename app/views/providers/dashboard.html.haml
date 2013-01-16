@@ -1,3 +1,8 @@
 =link_to "Add new class", new_provider_course_path(current_user)
+
+- if courses.blank?
+  %p You haven't created a course, #{link_to "create one now...", new_provider_course_path(current_user)}
+
 - courses.each do |course|
   = render 'courses/course', course: course
+
