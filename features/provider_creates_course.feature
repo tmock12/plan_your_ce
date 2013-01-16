@@ -24,3 +24,21 @@ Feature: Provider creates a course
     And I select "5/22/2014" as the "course End Date"
     When I press "Add class"
     Then I should see "Build a treehouse"
+
+    And I should see the following:
+      | Build a treehouse                             |
+      | Build a house in a tree and live on an island |
+      | $5.00                                         |
+      | Father Robinson                               |
+      | 411 Crescent Avenue                           |
+      | Avalon                                        |
+      | CA                                            |
+      | 90704                                         |
+      | 770-555-5555                                  |
+      | swissfamily@example.com                       |
+      | 2                                             |
+      | 30                                            |
+      | Endodontics                                   |
+      | Dentist, Dental Assistant                     |
+      | May 20, 2014                                  |
+      | May 22, 2014                                  |

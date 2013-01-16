@@ -1,6 +1,6 @@
 = form_for [current_user, course] do |f|
 
-  - new_course.errors.full_messages.each do |msg|
+  - course.errors.full_messages.each do |msg|
     %span.errors= msg
     %br
 
