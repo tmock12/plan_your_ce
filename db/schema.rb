@@ -50,14 +50,11 @@ ActiveRecord::Schema.define(:version => 20130115144551) do
     t.string   "phone"
     t.string   "fax"
     t.string   "website"
-    t.string   "email"
     t.string   "cerp_number"
-    t.string   "password_digest"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "activation_token"
     t.datetime "activated_at"
-    t.string   "session_token"
   end
 
   add_index "providers", ["activation_token"], :name => "index_providers_on_activation_token"

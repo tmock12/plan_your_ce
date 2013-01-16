@@ -6,7 +6,6 @@ describe Provider do
     subject { Provider.new }
     it { should have(1).errors_on(:name) }
     it { should have(1).errors_on(:phone) }
-    it { should have(2).errors_on(:email) }
     it { should have(1).errors_on(:cerp_number) }
   end
 
