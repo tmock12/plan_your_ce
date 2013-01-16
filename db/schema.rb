@@ -62,4 +62,13 @@ ActiveRecord::Schema.define(:version => 20130115144551) do
 
   add_index "providers", ["activation_token"], :name => "index_providers_on_activation_token"
 
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "session_token"
+    t.integer  "provider_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
 end
