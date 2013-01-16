@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'authem', '1.0.0rc3'
 gem 'decent_exposure'
+gem 'draper'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'phony_rails'
