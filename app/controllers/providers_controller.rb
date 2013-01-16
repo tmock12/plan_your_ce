@@ -1,5 +1,6 @@
 class ProvidersController < ApplicationController
   expose(:provider)
+  expose(:courses) { current_user.courses }
 
   def new
     provider.build_provider_address

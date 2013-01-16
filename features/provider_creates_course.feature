@@ -2,7 +2,7 @@ Feature: Provider creates a course
 
   Scenario:
     Given I am signed in
-    And I am on the courses page
+    And I am on the dashboard page
     When I follow "Add new class"
     And I fill in the following:
       | Title          | Build a treehouse                             |
@@ -46,7 +46,7 @@ Feature: Provider creates a course
 
   Scenario: Populated address fields
     Given I am signed in
-    And I am on the courses page
+    And I am on the dashboard page
     When I follow "Add new class"
     Then I should see the following values:
       | Field    | Value             |

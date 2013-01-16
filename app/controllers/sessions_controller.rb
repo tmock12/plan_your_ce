@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       render :new
     elsif provider && provider.authenticate(params[:password])
       sign_in(provider, false)
-      redirect_to :courses
+      redirect_to :dashboard
     else
       flash.now[:sign_in_error] = "Your email or password are incorrect"
       render :new
