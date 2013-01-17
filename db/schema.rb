@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20130117153748) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "admins", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "admins", ["user_id"], :name => "index_admins_on_user_id"
+
   create_table "courses", :force => true do |t|
     t.string   "title"
     t.text     "description"

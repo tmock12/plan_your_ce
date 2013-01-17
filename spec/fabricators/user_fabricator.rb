@@ -7,3 +7,8 @@ end
 Fabricator(:provider_user, from: :user) do
   role "provider"
 end
+
+Fabricator(:admin_user, from: :user) do
+  email 'admin@example.com'
+  role "admin"
+end
