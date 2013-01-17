@@ -8,7 +8,10 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'phony_rails'
 gem 'rails', '3.2.11'
-gem 'sqlite3'
+
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,6 +23,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'fabrication'
   gem 'pry-rails'
+  gem 'sqlite3'
 end
 
 group :test do
