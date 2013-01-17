@@ -16,6 +16,7 @@ class ProvidersController < ApplicationController
 
   def create
     if provider.save
+      provider.user.set_role!("provider")
       redirect_to :thank_you
     else
       render :new

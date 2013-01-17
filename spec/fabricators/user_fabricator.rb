@@ -3,3 +3,7 @@ Fabricator(:user) do
   password 'shipwrecked'
   password_confirmation 'shipwrecked'
 end
+
+Fabricator(:provider_user, from: :user) do
+  role "provider"
+end
