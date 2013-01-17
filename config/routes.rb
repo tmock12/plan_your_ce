@@ -5,7 +5,9 @@ PlanYourCe::Application.routes.draw do
     resources :courses
   end
 
-  get '/dashboard', to: 'providers#dashboard'
+  get '/provider_dashboard', to: 'providers#dashboard'
+  get '/admin_dashboard', to: 'admins#dashboard'
+  get '/dashboard', to: 'dashboard#index'
 
   get '/thank_you', to: 'pages#thank_you'
 

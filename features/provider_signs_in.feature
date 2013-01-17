@@ -15,4 +15,4 @@ Feature: Provider signs in
   Scenario: as an approved provider
     Given that provider has been approved
     When I press "Sign in"
-    Then I should be on the dashboard page
+    Then I should be on the provider_dashboard page
