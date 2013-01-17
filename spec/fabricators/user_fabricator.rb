@@ -1,10 +1,11 @@
 Fabricator(:user) do
-  email 'fritz@example.com'
+  email { Faker::Internet.email }
   password 'shipwrecked'
   password_confirmation 'shipwrecked'
 end
 
 Fabricator(:provider_user, from: :user) do
+  email "fritz@example.com"
   role "provider"
 end
 
