@@ -18,6 +18,7 @@ PlanYourCe::Application.routes.draw do
 
   namespace :admins do
     get '/dashboard'
+    post '/providers/:provider_id/approve', to: 'providers#approve'
   end
 
 end
