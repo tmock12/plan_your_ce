@@ -1,5 +1,4 @@
-class Admins::ProvidersController < ApplicationController
-  before_filter :require_user
+class Admins::ProvidersController < AuthenticatedController
   before_filter :require_admin
   expose(:provider)
 
