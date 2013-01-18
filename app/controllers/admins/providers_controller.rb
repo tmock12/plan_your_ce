@@ -4,7 +4,11 @@ class Admins::ProvidersController < AuthenticatedController
 
   def approve
     provider.activate!
-    flash.now
     redirect_to :admins_dashboard, notice: "You have approved #{provider.name}"
+  end
+
+  def reject
+    provider.reject!
+    redirect_to :admins_dashboard, notice: "You have rejected #{provider.name}"
   end
 end

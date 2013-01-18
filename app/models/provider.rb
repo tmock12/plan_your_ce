@@ -5,7 +5,7 @@ class Provider < ActiveRecord::Base
   has_one :provider_address, dependent: :destroy
   alias :address :provider_address
 
-  scope :unaproved, where(activated_at: nil)
+  scope :unaproved, where(activated_at: nil, rejected: false)
 
   delegate :email, to: :user
 
@@ -23,6 +23,10 @@ class Provider < ActiveRecord::Base
 
   def activate!
     self.update_attribute(:activated_at, Time.now)
+  end
+
+  def reject!
+    self.update_attribute(:rejected, true)
   end
 
   def activated?

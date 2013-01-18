@@ -19,6 +19,8 @@ PlanYourCe::Application.routes.draw do
   namespace :admins do
     get '/dashboard'
     post '/providers/:provider_id/approve', to: 'providers#approve'
+    post '/providers/:provider_id/reject', to: 'providers#reject'
+    get '/providers/:provider_id/confirm_reject', to: 'providers#confirm_reject'
   end
 
 end

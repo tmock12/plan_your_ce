@@ -13,3 +13,7 @@ Then /^I should see the providers:$/ do |attribute|
     end
   end
 end
+
+When /^that provider should be rejected$/ do
+  Provider.last.rejected.should be_true
+end

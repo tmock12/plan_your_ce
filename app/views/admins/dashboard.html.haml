@@ -6,9 +6,4 @@ admin dashboard
         %th= heading
   %tbody
     - unaproved_providers.each do |provider|
-      %tr.provider
-        %td= provider.name
-        %td= provider.cerp_number
-        %td= provider.phone
-        %td= provider.email
-        %td= button_to "Approve", {action: "approve", controller: "admins/providers", provider_id: provider}
+      = render 'admins/providers/provider', provider: provider

@@ -1,0 +1,6 @@
+%td= provider.name
+%td
+  = form_tag(action: "reject", controller: "admins/providers") do
+    = label_tag :comment
+    = text_area_tag :comment
+    = submit_tag "Confirm Rejection"
