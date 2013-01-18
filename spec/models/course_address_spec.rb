@@ -9,13 +9,12 @@ describe CourseAddress do
   end
 
   describe "depencies" do
-    let(:course) { Fabricate(:course) }
-    before { Fabricate(:course_address, course: course) }
+    before { Fabricate(:course) }
 
     it "requires a course" do
-      CourseAddress.count.should == 1
-      Course.destroy_all
-      CourseAddress.count.should == 0
+      expect{
+        Course.destroy_all
+      }.to change{CourseAddress.count}.by(-1)
     end
   end
 
