@@ -5,8 +5,7 @@ PlanYourCe::Application.routes.draw do
     resources :courses
   end
 
-  get '/provider_dashboard', to: 'providers#dashboard'
-  get '/admin_dashboard', to: 'admins#dashboard'
+  get '/providers/dashboard'
   get '/dashboard', to: 'dashboard#index'
 
   get '/thank_you', to: 'pages#thank_you'
@@ -16,5 +15,9 @@ PlanYourCe::Application.routes.draw do
   get '/sign_out', to: 'sessions#destroy'
 
   resources :courses, only: [:index, :show]
+
+  namespace :admins do
+    get '/dashboard'
+  end
 
 end

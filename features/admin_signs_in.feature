@@ -7,4 +7,4 @@ Feature: Admin signs in
       | email    | admin@example.com |
       | password | shipwrecked       |
     When I press "Sign in"
-    Then I should be on the admin dashboard page
+    Then I should be on the admins dashboard page

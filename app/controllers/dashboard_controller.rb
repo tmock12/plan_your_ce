@@ -3,8 +3,8 @@ class DashboardController < ApplicationController
 
   def index
     case current_user.role
-    when "admin" then redirect_to :admin_dashboard
-    when "provider" then redirect_to :provider_dashboard
+    when "admin" then redirect_to :admins_dashboard
+    when "provider" then redirect_to :providers_dashboard
     end
   end
 
