@@ -11,16 +11,17 @@ namespace :db do
       Fabricate(:random_provider)
     end
 
-    Provider.create!(
+    taylor = Provider.create!(
       name: "Taylors Dental",
       phone: "7703135078",
       cerp_number: "123",
       user_attributes: {
         email: "taylor@hashrocket.com",
         password: "password",
-        password_confirmation: "password"
+        password_confirmation: "password",
       }
     )
+    taylor.user.set_role!("provider")
 
     Provider.first.activate!
 
