@@ -9,6 +9,7 @@ class Admins::ProvidersController < AuthenticatedController
 
   def reject
     provider.reject!
+    ProviderMailer.account_rejection(provider, params[:comment]).deliver
     redirect_to :admins_dashboard, notice: "You have rejected #{provider.name}"
   end
 end

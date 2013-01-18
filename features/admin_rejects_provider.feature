@@ -16,6 +16,8 @@ Feature: Admin rejects provider
     Then I should see "You have rejected Island Dentistry"
     And that provider should be rejected
     And I should not see "54321"
+    And "fritz@example.com" should receive a rejection email
+    And that email should contain "Your id is wrong"
 
   Scenario: Admin cancels rejection
     Given I follow "Cancel"
