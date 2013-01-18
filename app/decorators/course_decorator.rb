@@ -7,7 +7,9 @@ class CourseDecorator < Draper::Decorator
   end
 
   def price
-    source.price[/^\d/] ? h.number_to_currency(source.price) : source.price
+    if source.price
+      source.price[/^\d/] ? h.number_to_currency(source.price) : source.price
+    end
   end
 
   def phone

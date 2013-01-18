@@ -1,36 +1,13 @@
 %dl
-  %dt Title
-  %dd= course.title
-
-  %dt Description
-  %dd= course.description
-
-  %dt Category
-  %dd= course.category
-
-  %dt Price
-  %dd= course.price
-
-  %dt Instructor
-  %dd= course.instructor
-
-  %dt Address
-  = course.formatted_address
-
-  %dt Email
-  %dd= course.email
-
-  %dt Phone
-  %dd= course.phone
-
-  %dt Audience
-  %dd= course.audience
-
-  %dt Max Attendance
-  %dd= course.max_attendance
-
-  %dt Start Date
-  %dd= course.start_date
-
-  %dt End Date
-  %dd= course.end_date
+  =dtag("Title", course.title)
+  =dtag("Description", course.description)
+  =dtag("Category", course.category)
+  =dtag("Price", course.price)
+  =dtag("Instructor", course.instructor)
+  =dtag("Address", course.formatted_address)
+  =dtag("Email", course.email)
+  =dtag("Phone", course.phone)
+  =dtag("Audience", course.audience)
+  =dtag("Max Attendance", course.max_attendance)
+  =dtag("Start Date", course.start_date)
+  =dtag("End Date", course.end_date)
