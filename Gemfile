@@ -4,6 +4,7 @@ gem 'authem', '1.0.0rc3'
 gem 'decent_exposure'
 gem 'draper'
 gem 'faker'
+gem 'fabrication'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'phony_rails'
@@ -21,7 +22,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'fabrication'
   gem 'pry-rails'
   gem 'sqlite3'
 end
