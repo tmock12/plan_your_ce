@@ -29,5 +29,7 @@ end
 
 group :test do
   gem "cucumber-rails"
+  gem 'capybara-email'
   gem "database_cleaner"
+  gem 'email_spec'
 end
