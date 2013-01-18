@@ -5,3 +5,7 @@ Fabricator(:provider) do
   provider_address
   user(fabricator: :provider_user)
 end
+
+Fabricator(:random_provider, from: :provider) do
+  user { Fabricate(:provider_user, email: Faker::Internet.email) }
+end

@@ -17,3 +17,7 @@ Then /^I should see the following values:$/ do |table|
     page.find_field(field).value.should == value
   end
 end
+
+Then /^I should see (\d+) unaproved providers$/ do |provider_count|
+  page.should have_selector('tr.provider', count: provider_count)
+end

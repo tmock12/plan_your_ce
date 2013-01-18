@@ -1,1 +1,13 @@
 admin dashboard
+%table
+  %thead
+    %tr
+      - ["Name", "ADA Number", "Phone", "Email"].each do |heading|
+        %th= heading
+  %tbody
+    - unaproved_providers.each do |provider|
+      %tr.provider
+        %td= provider.name
+        %td= provider.cerp_number
+        %td= provider.phone
+        %td= provider.email

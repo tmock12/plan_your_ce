@@ -5,6 +5,8 @@ class Provider < ActiveRecord::Base
   has_one :provider_address, dependent: :destroy
   alias :address :provider_address
 
+  scope :unaproved, where(activated_at: nil)
+
   delegate :email, to: :user
 
   accepts_nested_attributes_for :provider_address
