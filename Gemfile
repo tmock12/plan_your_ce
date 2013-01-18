@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'authem', '1.0.0rc3'
 gem 'decent_exposure'
