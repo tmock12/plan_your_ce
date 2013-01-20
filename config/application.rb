@@ -20,5 +20,11 @@ module PlanYourCe
     config.assets.enabled = true
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
+    config.before_initialize do
+      dev = File.join(Rails.root, 'config', 'development.yml')
+      YAML.load(File.open(dev)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(dev)
+    end
   end
 end
