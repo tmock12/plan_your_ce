@@ -8,7 +8,7 @@ end
 
 Fabricator(:random_provider, from: :provider) do
   name { Faker::Company.name }
-  phone { Faker::PhoneNumber.phone_number }
+  phone { "770857#{rand(1000..9999)}" }
   cerp_number { rand(1000..9999).to_s }
   user { Fabricate(:provider_user, email: Faker::Internet.email) }
 end
