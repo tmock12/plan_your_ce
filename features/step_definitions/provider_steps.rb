@@ -2,6 +2,10 @@ Given /^that provider has been approved$/ do
   Provider.last.activate!
 end
 
+Given /^those providers have been approved$/ do
+  Provider.all.each(&:activate!)
+end
+
 Given /^I have a course$/ do
   Fabricate(:course, provider: @provider)
 end
