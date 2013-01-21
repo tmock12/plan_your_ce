@@ -5,7 +5,8 @@ Feature: Admin approves provider
     And the following provider:
       | name        | Island Dentistry |
     When I am on the admins dashboard page
-    And I follow "Approve"
+    And I follow "Unapproved Providers"
+    When I click on "Approve" for that provider
     Then I should see "You have approved Island Dentistry"
     And "fritz@example.com" should receive an approval email
     And that email should contain a link to sign in

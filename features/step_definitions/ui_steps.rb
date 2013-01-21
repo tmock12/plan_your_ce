@@ -18,6 +18,14 @@ Then /^I should see the following values:$/ do |table|
   end
 end
 
-Then /^I should see (\d+) unaproved providers$/ do |provider_count|
+Then /^I should see (\d+) providers$/ do |provider_count|
   page.should have_selector('tr.provider', count: provider_count)
+end
+
+Then /^I should see the link "(.*?)"$/ do |link_name|
+  page.has_link?(link_name).should be_true
+end
+
+Then /^I should not see the link "(.*?)"$/ do |link_name|
+  page.has_link?(link_name).should be_false
 end

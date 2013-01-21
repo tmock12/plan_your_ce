@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /^the thank you\s?page$/
       '/thank_you'
+    when /^the unapproved providers page$/
+      '/admins/providers/unapproved'
     else
       begin
         page_name =~ /^the (.*) page$/

@@ -1,9 +1,3 @@
-admin dashboard
-%table
-  %thead
-    %tr
-      - ["Name", "ADA Number", "Phone", "Email"].each do |heading|
-        %th= heading
-  %tbody
-    - unaproved_providers.each do |provider|
-      = render 'admins/providers/provider', provider: provider
+%h1 Admin Dashboard
+= link_to "All Providers", admins_providers_scoped_path(:all)
+= link_to "Unapproved Providers", admins_providers_scoped_path(:unapproved)

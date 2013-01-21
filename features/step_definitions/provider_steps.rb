@@ -17,3 +17,11 @@ end
 When /^that provider should be rejected$/ do
   Provider.last.rejected.should be_true
 end
+
+When /^I click on "(.*?)" for that provider$/ do |link|
+  provider = Provider.last
+  within(:css, "tr.provider") do
+    click_link(link)
+  end
+end
+

@@ -7,6 +7,7 @@ Feature: Admin rejects provider
       | name        | Island Dentistry |
       | cerp_number | 54321            |
     When I am on the admins dashboard page
+    And I follow "Unapproved Providers"
     And I follow "Reject"
 
   Scenario: Admin rejects provider
@@ -21,5 +22,5 @@ Feature: Admin rejects provider
 
   Scenario: Admin cancels rejection
     Given I follow "Cancel"
-    Then I should be on the admins dashboard page
+    Then I should be on the unapproved providers page
     And I should see "54321"
