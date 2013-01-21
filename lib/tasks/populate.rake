@@ -19,6 +19,12 @@ namespace :db do
         email: "taylor@hashrocket.com",
         password: "password",
         password_confirmation: "password",
+      },
+      provider_address_attributes: {
+        street_1: "4435 touchton road",
+        city: "Jacksonville",
+        state: "FL",
+        zip_code: "32246"
       }
     )
     taylor.user.set_role!("provider")
