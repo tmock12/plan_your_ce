@@ -4,6 +4,7 @@ class Admins::ProvidersController < AuthenticatedController
 
   def approve
     provider.activate!
+    ProviderMailer.account_activated(provider).deliver
     redirect_to :admins_dashboard, notice: "You have approved #{provider.name}"
   end
 
