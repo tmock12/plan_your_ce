@@ -18,9 +18,11 @@ PlanYourCe::Application.routes.draw do
 
   namespace :admins do
     get '/dashboard'
-    post '/providers/:provider_id/approve', to: 'providers#approve'
-    post '/providers/:provider_id/reject', to: 'providers#reject'
-    get '/providers/:provider_id/confirm_reject', to: 'providers#confirm_reject'
+    scope 'providers' do
+      post ':provider_id/approve', to: 'providers#approve', as: :approve_provider
+      post ':provider_id/reject', to: 'providers#reject', as: :reject_provider
+      get ':provider_id/confirm_reject', to: 'providers#confirm_reject', as: :confirm_reject
+    end
   end
 
 end

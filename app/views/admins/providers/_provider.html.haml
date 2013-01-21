@@ -3,5 +3,5 @@
   %td= provider.cerp_number
   %td= provider.phone
   %td= provider.email
-  %td= button_to "Approve", {action: "approve", controller: "admins/providers", provider_id: provider}
-  %td= link_to "Reject", {action: "confirm_reject", controller: "admins/providers", provider_id: provider}, remote: true
+  %td= link_to "Approve", admins_approve_provider_path(provider), method: :post
+  %td= link_to "Reject", admins_confirm_reject_path(provider), remote: true
