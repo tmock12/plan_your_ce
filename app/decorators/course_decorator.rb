@@ -16,11 +16,11 @@ class CourseDecorator < Draper::Decorator
     source.phone.phony_formatted(spaces: '-')
   end
 
-  def start_date
+  def formatted_start_date
     source.start_date.to_s(:long)
   end
 
-  def end_date
+  def formatted_end_date
     source.end_date.to_s(:long)
   end
 end

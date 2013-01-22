@@ -7,8 +7,8 @@ describe CourseDecorator do
 
   its(:audience) { should == "stranded islanders, shipwrecked persons" }
   its(:phone) { should == '678-867-5309' }
-  its(:start_date) { should == Date.today.strftime("%b %e, %Y") }
-  its(:end_date) { should == Date.tomorrow.strftime("%b %e, %Y") }
+  its(:formatted_start_date) { should == Date.today.strftime("%b %e, %Y") }
+  its(:formatted_end_date) { should == Date.tomorrow.strftime("%b %e, %Y") }
   its(:formatted_address) { should == "<dd>Catalina, California </dd>" }
 
   describe "#price" do
