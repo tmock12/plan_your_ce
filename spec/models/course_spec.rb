@@ -3,13 +3,17 @@ require 'spec_helper'
 describe Course do
 
   describe "validations" do
-    subject { Course.new }
+    subject { Course.new(start_date: Date.today, end_date: Date.yesterday) }
     it { should have(1).errors_on(:phone) }
     it { should have(1).errors_on(:title) }
     it { should have(1).errors_on(:description) }
     it { should have(1).errors_on(:audience) }
     it { should have(1).errors_on(:credits) }
     it { should have(1).errors_on(:email) }
+
+    it "must have a start date before end date" do
+      subject.should have(1).errors_on(:start_date)
+    end
   end
 
   describe 'phone number format' do

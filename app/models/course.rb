@@ -12,8 +12,15 @@ class Course < ActiveRecord::Base
 
   before_create :normalize_phone_number
 
-  validates_presence_of :phone, :title, :description, :audience, :credits, :email
+  validates_presence_of :phone, :title, :description, :audience, :credits, :email,
+    :start_date, :end_date
   validates_plausible_phone :phone
+  validate :start_must_be_before_end_date
+
+  def start_must_be_before_end_date
+    errors.add(:start_date, "must be before end date") unless
+    self.start_date <= self.end_date
+  end
 
   def normalize_phone_number
     self.phone = PhonyRails.normalize_number(phone, country_code: 'US')
