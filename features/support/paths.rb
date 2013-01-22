@@ -14,6 +14,8 @@ module NavigationHelpers
       '/thank_you'
     when /^the unapproved providers page$/
       '/admins/providers/unapproved'
+    when /^that courses show page$/
+      course_path(@course)
     else
       begin
         page_name =~ /^the (.*) page$/

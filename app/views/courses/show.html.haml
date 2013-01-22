@@ -1,3 +1,5 @@
+-if course.provider.user_id == current_user.id
+  =link_to "Edit", edit_provider_course_path(course)
 %dl
   =dtag("Title", course.title)
   =dtag("Description", course.description)
@@ -9,5 +11,6 @@
   =dtag("Phone", course.phone)
   =dtag("Audience", course.audience)
   =dtag("Max Attendance", course.max_attendance)
+  =dtag("Credits", course.credits)
   =dtag("Start Date", course.formatted_start_date)
   =dtag("End Date", course.formatted_end_date)

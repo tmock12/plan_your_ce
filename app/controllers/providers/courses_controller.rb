@@ -22,4 +22,9 @@ class Providers::CoursesController < AuthenticatedController
     end
   end
 
+  def update
+    course.update_attributes(params[:course])
+    redirect_to course
+  end
+
 end
