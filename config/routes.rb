@@ -2,8 +2,10 @@ PlanYourCe::Application.routes.draw do
   root to: 'pages#welcome'
 
   resources :providers, only: [:new, :create] do
-    resources :courses
+    resources :courses, controller: 'providers/courses'
   end
+
+  resources :courses, only: [:index, :show]
 
   get '/providers/dashboard'
   get '/dashboard', to: 'dashboard#index'

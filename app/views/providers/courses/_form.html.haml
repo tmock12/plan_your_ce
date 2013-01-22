@@ -1,0 +1,49 @@
+- course.errors.full_messages.each do |msg|
+  %span.errors= msg
+  %br
+
+%dl
+
+  %dt= f.label :title
+  %dd= f.text_field :title
+
+  %dt= f.label :description
+  %dd= f.text_area :description
+
+  =f.fields_for :course_address do |a|
+    = render 'shared/address_form', f: a
+
+  %dt= f.label :phone
+  %dd= f.phone_field :phone, value: provider.phone
+
+  %dt= f.label :email
+  %dd= f.email_field :email, value: provider.user.email
+
+  %dt= f.label :credits
+  %dd= f.number_field :credits
+
+  %dt= f.label :price
+  %dd= f.text_field :price
+
+  %dt= f.label :instructor
+  %dd= f.text_field :instructor
+
+  %dt= f.label :max_attendance
+  %dd= f.number_field :max_attendance
+
+  %dt= f.label :category
+  %dd= f.select :category, Dental::CATEGORIES
+
+  %dt= f.label :audience
+  %dd
+    - Dental::CAREERS.each do |career|
+      %label
+        = f.check_box :audience, {name: "course[audience][]"}, career, nil
+        = f.label career
+
+  %dt= f.label :start_date
+  %dd= f.date_select :start_date, use_month_numbers: true
+
+  %dt= f.label :end_date
+  %dd= f.date_select :end_date, use_month_numbers: true
+
