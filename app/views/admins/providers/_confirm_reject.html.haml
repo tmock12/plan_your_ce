@@ -1,7 +1,7 @@
 %td= provider.name
 %td
-  = form_tag :admins_reject_provider do
+  = form_tag :admins_provider_reject do
     = label_tag :comment
     = text_area_tag :comment
     = submit_tag "Confirm Rejection"
-%td= link_to "Cancel", admins_providers_scoped_path(:unapproved)
+%td= link_to "Cancel", :unapproved_admins_providers

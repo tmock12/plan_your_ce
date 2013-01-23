@@ -25,12 +25,14 @@ PlanYourCe::Application.routes.draw do
 
   namespace :admins do
     get '/dashboard'
-    scope 'providers' do
-      get ':scope', to: 'providers#index', as: 'providers_scoped',
-        constraints: { scope: /(all|unapproved|approved)/ }
-      post ':provider_id/approve', to: 'providers#approve', as: :approve_provider
-      post ':provider_id/reject', to: 'providers#reject', as: :reject_provider
-      get ':provider_id/confirm_reject', to: 'providers#confirm_reject', as: :confirm_reject
+    resources 'providers', only: :index do
+      post '/approve', to: 'providers#approve'
+      post '/reject', to: 'providers#reject'
+      get '/confirm_reject', to: 'providers#confirm_reject'
+      collection do
+        get '/unapproved'
+        get '/approved'
+      end
     end
   end
 

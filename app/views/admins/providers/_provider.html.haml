@@ -3,6 +3,6 @@
   %td= provider.cerp_number
   %td= provider.phone
   %td= provider.email
-  -if scope == "unapproved"
-    %td= link_to "Approve", admins_approve_provider_path(provider), method: :post
-    %td= link_to "Reject", admins_confirm_reject_path(provider), remote: true
+  - if provider.activated_at.nil? && !provider.rejected
+    %td= link_to "Approve", admins_provider_approve_path(provider), method: :post
+    %td= link_to "Reject", admins_provider_confirm_reject_path(provider), remote: true

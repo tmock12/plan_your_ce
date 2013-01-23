@@ -1,0 +1,11 @@
+= link_to "All Providers", :admins_providers
+= link_to "Unapproved Providers", :unapproved_admins_providers
+= link_to "Approved Providers", :approved_admins_providers
+%table
+  %thead
+    %tr
+      - ["Name", "ADA Number", "Phone", "Email"].each do |heading|
+        %th= heading
+  %tbody
+    - scoped_providers.each do |provider|
+      = render 'admins/providers/provider', provider: provider
