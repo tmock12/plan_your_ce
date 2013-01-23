@@ -25,6 +25,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'sqlite3'
+  gem 'chronic'
 end
 
 group :test do
