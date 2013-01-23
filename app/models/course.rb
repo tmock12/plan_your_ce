@@ -3,6 +3,8 @@ class Course < ActiveRecord::Base
   has_one :course_address, dependent: :destroy
   alias :address :course_address
 
+  scope :active, where("end_date >= ?", Date.today).order("end_date")
+
   serialize :audience
   accepts_nested_attributes_for :course_address
 

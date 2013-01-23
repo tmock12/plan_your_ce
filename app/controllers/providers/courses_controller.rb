@@ -9,6 +9,9 @@ class Providers::CoursesController < AuthenticatedController
       provider.courses.build(params[:course])
     end
   end
+  expose(:active_courses) do
+    CourseDecorator.decorate_collection(provider.courses.active)
+  end
 
   def new
     course.build_course_address

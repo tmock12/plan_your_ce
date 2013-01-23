@@ -45,4 +45,15 @@ describe Course do
       Course.count.should == 0
     end
   end
+
+  describe "#active" do
+    let!(:course2) { Fabricate(:course, end_date: (Date.today + 1.day)) }
+    let!(:course1) { Fabricate(:course, end_date: Date.today) }
+
+    it "returns active courses sorted by end date" do
+      active_courses = Course.active
+      active_courses.first.should == course1
+      active_courses.last.should == course2
+    end
+  end
 end
