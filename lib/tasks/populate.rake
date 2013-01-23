@@ -4,6 +4,8 @@ namespace :db do
   task :populate => :environment do
     User.destroy_all
     Provider.destroy_all
+    Course.destroy_all
+    Address.destroy_all
 
     Fabricate(:admin_user, email: "admin@example.com")
 
@@ -32,7 +34,8 @@ namespace :db do
     Provider.first.activate!
 
     3.times do
-      Fabricate(:course, provider: Provider.first)
+      course_address = Fabricate(:random_course_address)
+      Fabricate(:random_course, provider: Provider.first, course_address: course_address)
     end
 
   end

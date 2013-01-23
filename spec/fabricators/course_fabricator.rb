@@ -8,3 +8,8 @@ Fabricator(:course) do
   start_date { Date.today }
   end_date { Date.tomorrow }
 end
+
+Fabricator(:random_course, from: :course) do
+  title { Faker::Company.bs }
+  description { Faker::Lorem.paragraph(7) }
+end
