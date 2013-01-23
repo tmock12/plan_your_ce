@@ -10,6 +10,7 @@
     %header
       -if current_user
         = link_to "Sign out", :sign_out
+        = link_to "Dashboard", :dashboard
       -else
         = link_to "Register", :new_provider
         = link_to "Sign in", :sign_in
