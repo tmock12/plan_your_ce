@@ -1,4 +1,4 @@
 class CoursesController < ApplicationController
   expose(:courses)
-  expose(:course) { CourseDecorator.decorate(Course.find(params[:id])) }
+  expose(:course) { Course.find(params[:id]).decorate }
 end
