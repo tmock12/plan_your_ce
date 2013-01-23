@@ -1,8 +1,2 @@
-%table
-  %thead
-    %tr
-      - ["Title", "Start Date", "End Date", "Address"].each do |heading|
-        %th= heading
-  %tbody
-    - active_courses.each do |course|
-      = render 'course', course: course
+Active Courses
+= render 'table', scoped_courses: active_courses

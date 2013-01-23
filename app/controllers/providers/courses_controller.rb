@@ -2,15 +2,19 @@ class Providers::CoursesController < AuthenticatedController
   expose(:provider) do
     ProviderDecorator.decorate(Provider.find_by_user_id(current_user))
   end
+  expose(:courses) { provider.courses }
   expose(:course) do
     if params[:id].present?
-      CourseDecorator.decorate(provider.courses.find(params[:id]))
+      CourseDecorator.decorate(courses.find(params[:id]))
     else
-      provider.courses.build(params[:course])
+      courses.build(params[:course])
     end
   end
   expose(:active_courses) do
-    CourseDecorator.decorate_collection(provider.courses.active)
+    CourseDecorator.decorate_collection(courses.active)
+  end
+  expose(:inactive_courses) do
+    CourseDecorator.decorate_collection(courses.inactive)
   end
 
   def new

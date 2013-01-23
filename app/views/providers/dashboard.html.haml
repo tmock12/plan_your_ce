@@ -3,6 +3,7 @@
 - if courses.blank?
   %p You haven't created a course, #{link_to "create one now...", new_provider_course_path(current_user)}
 - else
-  %p You have #{pluralize(courses.active.count, 'active course')}
+  %p You have #{pluralize(courses.active.count, 'active course')} and #{pluralize(courses.inactive.count, 'inactive course')}
 
 = link_to "Active Courses", active_provider_courses_path(provider)
+= link_to "Inactive Courses", inactive_provider_courses_path(provider)

@@ -5,6 +5,7 @@ PlanYourCe::Application.routes.draw do
     resources :courses, controller: 'providers/courses' do
       collection do
         get '/active', to: 'providers/courses#active'
+        get '/inactive', to: 'providers/courses#inactive'
       end
     end
   end
