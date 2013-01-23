@@ -1,5 +1,6 @@
 class ProvidersController < ApplicationController
   before_filter :require_user, except: [:new, :create]
+  before_filter :require_provider, except: [:new, :create]
   expose(:provider) do
     if current_user
       Provider.find_by_user_id(current_user)
@@ -21,5 +22,11 @@ class ProvidersController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def require_provider
+    redirect_to :dashboard unless current_user.role == "provider"
   end
 end
