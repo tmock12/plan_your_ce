@@ -7,5 +7,4 @@ Fabricator(:course) do
   phone "678-867-5309"
   start_date { Date.today }
   end_date { Date.tomorrow }
-  course_address
 end

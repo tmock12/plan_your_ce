@@ -9,7 +9,10 @@ describe CourseAddress do
   end
 
   describe "depencies" do
-    before { Fabricate(:course) }
+    before do
+      course = Fabricate(:course)
+      Fabricate(:course_address, course: course)
+    end
 
     it "requires a course" do
       expect{

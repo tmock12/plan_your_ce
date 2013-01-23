@@ -11,6 +11,12 @@ Feature: Provider edits a course
       | Email          | swissfamily@example.com                       |
       | Credits        | 2                                             |
       | Max Attendance | 30                                            |
+    And that course has the address:
+      | city    | state |
+      | Atlanta | GA    |
+    And that course has the dates:
+      | start           | end             |
+      | 3 days from now | 1 week from now |
     When I am on that courses show page
     And I follow "Edit"
     When I fill in the following:
