@@ -5,7 +5,7 @@ Feature: Provider views dashboard
   Scenario: with courses
     Given I have a course
     And I am on the providers dashboard page
-    Then I should see "Learn to swim"
+    Then I should see "You have 1 active course"
 
   Scenario: with no courses
     Given I am on the providers dashboard page
