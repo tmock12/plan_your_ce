@@ -1,9 +1,4 @@
 = form_for provider do |f|
-
-  - provider.errors.full_messages.each do |msg|
-    %span.errors= msg
-    %br
-
   %dl
 
     %dt= f.label :name
