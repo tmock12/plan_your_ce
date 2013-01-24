@@ -1,1 +1,8 @@
-%h1 Welcome to Plan Your CE
+.welcome
+  %h1 Welcome to Plan Your CE
+  %h3 Here to search for continuing education courses?
+  %h3= link_to "Go get 'em!", :courses
+-unless current_user
+  %p Are you a Continuing Education Provider? Then feel free to #{ link_to "Register", :new_provider }
+
+  %p Already registered and approved? #{ link_to "Sign in", :sign_in }

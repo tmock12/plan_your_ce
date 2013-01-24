@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to :courses, notice: "You are now signed out"
+    redirect_to :root, notice: "You are now signed out"
   end
 
 end

@@ -16,7 +16,7 @@ Given /^I am signed in as an admin$/ do
 end
 
 Then /^I should be signed out$/ do
-  current_path.should == courses_path
+  current_path.should == root_path
   page.should_not have_content "Sign out"
   page.should have_content "Sign in"
 end

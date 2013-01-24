@@ -8,13 +8,15 @@
   = csrf_meta_tags
   %body
     %header
+      %div.logo
+        %h1= link_to "PlanYourCE", :root
+        %p= link_to "View the Courses", :courses
       -if current_user
-        = link_to "Sign out", :sign_out
-        = link_to "Dashboard", :dashboard
-      -else
-        = link_to "Register", :new_provider
-        = link_to "Sign in", :sign_in
-      - flash.keys.each do |type|
-        .flash{ class: type }
-          %p= flash[type]
-    = yield
+        .user_links
+          = link_to "Sign out", :sign_out
+          = link_to "Dashboard", :dashboard
+    - flash.keys.each do |type|
+      .flash{ class: type }
+        %p= flash[type]
+    .content
+      = yield

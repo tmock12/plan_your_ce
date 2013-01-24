@@ -1,4 +1,5 @@
-Course Index
+%h1 Course Index
 
-- courses.each do |course|
-  = render 'course', course: course
+%ul
+  - courses.each do |course|
+    = render 'course', course: course
