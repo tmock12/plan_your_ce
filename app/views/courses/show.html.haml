@@ -1,5 +1,5 @@
--if current_user && course.provider.user_id == current_user.id
-  =link_to "Edit", edit_provider_course_path(course)
+-if current_user && provider.user.id == current_user.id
+  =link_to "Edit", edit_provider_course_path(provider, course)
 %dl
   =dtag("Title", course.title)
   =dtag("Description", course.description)
