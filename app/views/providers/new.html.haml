@@ -1,7 +1,7 @@
 = form_for provider do |f|
   %dl
 
-    %dt= f.label :name
+    %dt= f.label :name, "Provider Name"
     %dd= f.text_field :name
 
     = f.fields_for :provider_address do |a|

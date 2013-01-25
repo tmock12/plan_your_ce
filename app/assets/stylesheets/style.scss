@@ -78,8 +78,21 @@ header {
       background: whitesmoke;
       font-size: 15px;
     }
-    dd { margin-bottom: 10px; }
-    dl dt { background: none; }
+    input[name=commit] {
+      height: 40px;
+      width: 100px;
+    }
+    input[type=checkbox] {
+      width: 5px;
+    }
+    dl dd { 
+      margin-bottom: 5px;
+      padding: 0;
+    }
+    dl dt { 
+      background: none; 
+      padding: 0;
+    }
   }
   ul {
     background: rgba(255, 255, 255, 0.3);
