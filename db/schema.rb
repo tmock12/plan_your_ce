@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125151544) do
+ActiveRecord::Schema.define(:version => 20130125152403) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street_1"
@@ -59,15 +59,12 @@ ActiveRecord::Schema.define(:version => 20130125151544) do
     t.string   "fax"
     t.string   "website"
     t.string   "cerp_number"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-    t.string   "activation_token"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.datetime "activated_at"
     t.integer  "user_id"
-    t.boolean  "rejected",         :default => false
+    t.boolean  "rejected",     :default => false
   end
-
-  add_index "providers", ["activation_token"], :name => "index_providers_on_activation_token"
 
   create_table "users", :force => true do |t|
     t.string   "email"

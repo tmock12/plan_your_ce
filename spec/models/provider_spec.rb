@@ -15,7 +15,6 @@ describe Provider do
 
     context 'non-activated provider' do
       its(:activated?) { should be_false }
-      its(:activation_token) { should_not be_nil }
     end
 
     context 'activated provider' do

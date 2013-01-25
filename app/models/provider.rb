@@ -16,7 +16,6 @@ class Provider < ActiveRecord::Base
   attr_accessible :cerp_number,  :fax, :name, :phone,
     :website, :provider_address_attributes, :user_attributes
 
-  before_create :generate_activation_token
   before_create :normalize_phone_number
 
   validates_plausible_phone :phone
@@ -32,10 +31,6 @@ class Provider < ActiveRecord::Base
 
   def activated?
     activated_at.present?
-  end
-
-  def generate_activation_token
-    self.activation_token = SecureRandom.urlsafe_base64
   end
 
   def normalize_phone_number
