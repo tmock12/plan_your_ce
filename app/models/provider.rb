@@ -5,8 +5,8 @@ class Provider < ActiveRecord::Base
   has_one :provider_address, dependent: :destroy
   alias :address :provider_address
 
-  scope :unapproved, where(activated_at: nil, rejected: false)
-  scope :approved, where("activated_at is not null", rejected: false)
+  scope :unapproved, where("activated_at is null AND rejected = ?", false)
+  scope :approved, where("activated_at is not null AND rejected = ?", false)
 
   delegate :email, to: :user
 
