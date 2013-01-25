@@ -4,7 +4,7 @@ class Course < ActiveRecord::Base
   alias :address :course_address
 
   scope :active, where("end_date >= ?", Date.today).order("end_date")
-  scope :inactive, where("end_date < ?", Date.today).order("end_date")
+  scope :inactive, where("end_date < ?", Date.today).order("end_date DESC")
 
   serialize :audience
   accepts_nested_attributes_for :course_address
