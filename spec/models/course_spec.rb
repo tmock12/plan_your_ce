@@ -40,9 +40,9 @@ describe Course do
     before { Fabricate(:course, provider: provider) }
 
     it "requires a provider" do
-      Course.count.should == 1
-      Provider.destroy_all
-      Course.count.should == 0
+      expect {
+        Provider.destroy_all
+      }.to change{Course.count}.by(-1)
     end
   end
 
