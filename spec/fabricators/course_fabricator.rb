@@ -5,8 +5,9 @@ Fabricator(:course) do
   credits "5"
   email "ernst@example.com"
   phone "678-867-5309"
-  start_date { Date.today }
-  end_date { Date.tomorrow }
+  start_date { (Date.today + 2.days) }
+  end_date { (Date.today + 1.week) }
+  airport { Airport.all.sample }
 end
 
 Fabricator(:random_course, from: :course) do

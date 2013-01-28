@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Course do
 
   describe "validations" do
-    subject { Course.new(start_date: Date.today, end_date: Date.yesterday) }
+    subject { Course.new(start_date: Date.tomorrow, end_date: Date.yesterday) }
     it { should have(1).errors_on(:phone) }
     it { should have(1).errors_on(:title) }
     it { should have(1).errors_on(:description) }
@@ -47,8 +47,8 @@ describe Course do
   end
 
   describe "#active" do
-    let!(:course2) { Fabricate(:course, end_date: (Date.today + 1.day)) }
-    let!(:course1) { Fabricate(:course, end_date: Date.today) }
+    let!(:course2) { Fabricate(:course, end_date: (Date.today + 1.week)) }
+    let!(:course1) { Fabricate(:course, end_date: (Date.today + 3.days)) }
 
     it "returns active courses sorted by end date" do
       active_courses = Course.active
