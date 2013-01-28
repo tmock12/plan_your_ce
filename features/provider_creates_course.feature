@@ -12,6 +12,7 @@ Feature: Provider creates a course
       | Address        | 411 Crescent Avenue                           |
       | City           | Avalon                                        |
       | Zip Code       | 90704                                         |
+      | Airport        | Atlantic City, NJ-ACY                         |
       | Phone          | 770-555-5555                                  |
       | Email          | swissfamily@example.com                       |
       | Credits        | 2                                             |
@@ -23,9 +24,8 @@ Feature: Provider creates a course
     And I select "5/20/2014" as the "course Start Date"
     And I select "5/22/2014" as the "course End Date"
     When I press "Add class"
-    Then I should see "Build a treehouse"
 
-    And I should see the following:
+    Then I should see the following:
       | Text                                          |
       | Build a treehouse                             |
       | Build a house in a tree and live on an island |
@@ -35,6 +35,7 @@ Feature: Provider creates a course
       | Avalon                                        |
       | CA                                            |
       | 90704                                         |
+      | Atlantic City, NJ-ACY                         |
       | 770-555-5555                                  |
       | swissfamily@example.com                       |
       | 2                                             |

@@ -9,6 +9,9 @@
   =f.fields_for :course_address do |a|
     = render 'shared/address_form', f: a
 
+  %dt= f.label :airport_title, "Airport"
+  %dd= f.text_field :airport_title, data: { autocomplete_source: airports_path(format: :js)}
+
   %dt= f.label :phone
   %dd= f.phone_field :phone, value: provider.phone
 

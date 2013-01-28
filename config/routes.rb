@@ -36,4 +36,6 @@ PlanYourCe::Application.routes.draw do
     end
   end
 
+  get '/airports', to: 'airports#index'
+
 end
