@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(:version => 20130127142443) do
   add_index "admins", ["user_id"], :name => "index_admins_on_user_id"
 
   create_table "airports", :force => true do |t|
-    t.string   "location"
+    t.string   "title"
     t.string   "iata_code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "airports", ["location"], :name => "index_airports_on_location"
+  add_index "airports", ["title"], :name => "index_airports_on_location"
 
   create_table "courses", :force => true do |t|
     t.string   "title"
