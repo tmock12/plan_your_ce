@@ -5,6 +5,8 @@ require 'rspec/rails'
 require 'email_spec'
 require 'rspec/autorun'
 
+load "#{Rails.root}/db/test_seeds.rb"
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -25,6 +27,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
