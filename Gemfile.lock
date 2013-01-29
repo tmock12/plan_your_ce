@@ -84,6 +84,7 @@ GEM
     fabrication (2.5.4)
     faker (1.1.2)
       i18n (~> 0.5)
+    fakeweb (1.3.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
     ffi (1.3.1)
@@ -195,6 +196,7 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    vcr (2.4.0)
     websocket (1.0.6)
     xpath (1.0.0)
       nokogiri (~> 1.3)
@@ -214,6 +216,7 @@ DEPENDENCIES
   email_spec
   fabrication
   faker
+  fakeweb
   faraday
   haml-rails
   jquery-rails
@@ -226,3 +229,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+  vcr
