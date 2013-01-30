@@ -1,4 +1,5 @@
 class FlightFinder
+
   attr_accessor :options
 
   def initialize(options={})
@@ -60,6 +61,12 @@ class FlightFinder
 
   def passengers
     options[:passengers]
+  end
+
+  def valid?
+    [:origin_airport, :destination_airport].each do |f|
+      return options[f].present? && Airport.valid_title?(options[f])
+    end
   end
 
 end

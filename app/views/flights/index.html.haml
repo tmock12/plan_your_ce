@@ -1,0 +1,17 @@
+%table
+  -trips.each do |trip|
+    %thead
+      %tr
+        %th Total Price: #{number_to_currency(trip.total_price)}
+      %tr
+        - ["Departure Airport", "Departure Time", "Arrival Airport", "Arrival Time", "Airline"].each do |heading|
+          %th= heading
+    %tbody
+      %tr
+        %th Departure Flights
+      - trip.departure_flights.each do |flight|
+        = render 'flight', flight: flight
+      %tr
+        %th Return Flights
+      - trip.return_flights.each do |flight|
+        = render 'flight', flight: flight

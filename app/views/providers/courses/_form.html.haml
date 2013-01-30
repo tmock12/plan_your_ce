@@ -10,7 +10,7 @@
     = render 'shared/address_form', f: a
 
   %dt= f.label :airport_title, "Airport"
-  %dd= f.text_field :airport_title, data: { autocomplete_source: airports_path(format: :js)}
+  %dd= f.text_field :airport_title, data: { autocomplete_source: airports_path }
 
   %dt= f.label :phone
   %dd= f.phone_field :phone, value: provider.phone

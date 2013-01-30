@@ -1,0 +1,21 @@
+= form_tag course_flights_path, method: :post do
+  %dl
+
+    %dt= label_tag :origin_airport, 'Departure Airport'
+    %dd= text_field_tag :origin_airport, '',
+      data: { autocomplete_source: airports_path}
+
+    %dt= label_tag :destination_airport
+    %dd= text_field_tag :destination_airport, course.airport.title,
+      data: { autocomplete_source: airports_path}
+
+    %dt= label_tag :departure
+    %dd= date_select :departure, "date", default: course.start_date
+
+    %dt= label_tag :return
+    %dd= date_select :return, "date", default: course.end_date
+
+    %dt= label_tag :passengers, "Tickets"
+    %dd= number_field_tag :passengers, "1"
+
+    = submit_tag "Search"

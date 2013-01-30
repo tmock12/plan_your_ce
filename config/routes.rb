@@ -10,7 +10,9 @@ PlanYourCe::Application.routes.draw do
     end
   end
 
-  resources :courses, only: [:index, :show]
+  resources :courses, only: [:index, :show] do
+    resources :flights, only: [:new, :create, :index]
+  end
 
   get '/providers/dashboard'
   get '/dashboard', to: 'dashboard#index'
