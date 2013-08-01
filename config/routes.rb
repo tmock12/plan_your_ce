@@ -24,14 +24,14 @@ PlanYourCe::Application.routes.draw do
   resources :courses, only: [:index, :show]
 
   namespace :admins do
-    get '/dashboard'
+    get '/dashboard', to: :dashboard
     resources 'providers', only: :index do
       post '/approve', to: 'providers#approve'
       post '/reject', to: 'providers#reject'
       get '/confirm_reject', to: 'providers#confirm_reject'
       collection do
-        get '/unapproved'
-        get '/approved'
+        get '/unapproved', to: :unapproved
+        get '/approved', to: :approved
       end
     end
   end

@@ -1,7 +1,8 @@
 class Admins::ProvidersController < AuthenticatedController
   before_filter :require_admin
   expose(:provider)
-  expose(:providers) { ProviderDecorator.decorate_collection(Provider.all) }
+  expose(:providers)
+  expose(:deco_providers) { ProviderDecorator.decorate_collection(providers) }
   expose(:approved_providers) { Provider.approved.decorate }
   expose(:unapproved_providers) { Provider.unapproved.decorate }
 
