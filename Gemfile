@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'phony_rails'
 gem 'rails', '3.2.14'
+gem 'strong_parameters'
 
 group :production do
   gem 'pg'

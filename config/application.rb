@@ -15,7 +15,7 @@ module PlanYourCe
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_support.escape_html_entities_in_json = true
-    config.active_record.whitelist_attributes = true
+    config.active_record.whitelist_attributes = false
     config.autoload_paths += %W(#{Rails.root}/lib)
     config.assets.enabled = true
     config.assets.version = '1.0'

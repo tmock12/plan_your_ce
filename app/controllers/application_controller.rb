@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include Authem::ControllerSupport
 
+  decent_configuration do
+    strategy DecentExposure::StrongParametersStrategy
+  end
+
   # While under development us http basic authenticate
   # before_filter :authenticate
 

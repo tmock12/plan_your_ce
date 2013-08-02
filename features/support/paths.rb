@@ -16,6 +16,8 @@ module NavigationHelpers
       '/admins/providers/unapproved'
     when /^that courses show page$/
       course_path(@course)
+    when /^the providers dashboard page$/
+      provider_dashboard_path(@provider)
     else
       begin
         page_name =~ /^the (.*) page$/
